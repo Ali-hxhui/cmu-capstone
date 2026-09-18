@@ -19,6 +19,9 @@ backup-codes*.txt
 # Personal bilingual / Chinese notes (English docs live at repo root)
 local/
 
+# Local IDE type-check config (optional; not needed to run the pipeline)
+pyproject.toml
+
 # Project admin files (PDFs, slides, spreadsheets) — keep on shared drive
 *.pdf
 *.xlsx

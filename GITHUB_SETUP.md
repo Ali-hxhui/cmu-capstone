@@ -89,14 +89,17 @@ git push -u origin main
 2. **Settings** → **Collaborators** (or **Manage access**)
 3. Click **Add people**
 4. Enter each teammate's GitHub username
-5. They accept the email invitation, then can clone and push
+5. They accept the email invitation, then can clone
 
-Suggested permissions:
+Suggested permissions (default workflow — local run + CSV handoff):
 
 | Role | Access |
 |------|--------|
 | Repo admin (Xinhui) | Admin |
-| Other 5 members | Write |
+| Other 5 members | **Read** (clone and pull only) |
+
+Grant **Write** only if teammates will push search term updates directly to GitHub (optional).
+See `TEAM_WORKFLOW.md`.
 
 ---
 
@@ -139,21 +142,24 @@ See `TEAM_WORKFLOW.md` for the full 6-person workflow.
 
 ---
 
-## 5. Day-to-day Git workflow
+## 5. Day-to-day workflow (default)
+
+**Teammates:**
 
 ```bash
-git pull origin main          # before you start working
-# edit files
-git add search_terms/search_terms.csv
-git commit -m "Add 5 lung search terms for haikuan"
-git push origin main
+git pull origin main    # when Xinhui updates scripts or docs
+# run collection locally — see TEAM_WORKFLOW.md
+# upload data/runs/<run-id>/ to Shared Folder
 ```
 
-**Tips to avoid conflicts:**
+**Repo admin (Xinhui):**
 
-- Each person edits only their domain block in `search_terms.csv`
-- Never commit `data/` or `.env`
-- Upload collection CSVs to Shared Folder, not GitHub
+- Merge uploaded run folders with `assemble_dataset.py`
+- Update `search_terms/search_terms.csv` from member CSVs when needed
+- Push code and doc changes to GitHub
+
+**Optional — teammates push search terms:** `git pull` → edit CSV → commit → push. Requires
+Write access. Not needed for the default handoff workflow.
 
 ---
 

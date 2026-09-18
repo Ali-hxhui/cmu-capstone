@@ -1,0 +1,27 @@
+.env
+__pycache__/
+.venv/
+*.pyc
+.DS_Store
+
+# Large generated data — share via team drive, not git
+data/
+
+# Generated batch slices (regenerate with scripts/assign_collection_batches.py)
+search_terms/batches/*.csv
+search_terms/batches/transcript_chunks/
+
+# Secrets and local credentials
+*.log
+Backup-codes*.txt
+backup-codes*.txt
+
+# Personal bilingual / Chinese notes (English docs live at repo root)
+local/
+
+# Project admin files (PDFs, slides, spreadsheets) — keep on shared drive
+*.pdf
+*.xlsx
+*.docx
+*.pptx
+Fall 2026 AHN Cancer Education Project-selected/

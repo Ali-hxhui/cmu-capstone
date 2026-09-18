@@ -1,0 +1,2 @@
+certifi>=2024.0.0
+youtube-transcript-api==1.2.4

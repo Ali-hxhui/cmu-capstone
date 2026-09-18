@@ -1,0 +1,51 @@
+cancer_domain,search_query,contributor,source,scope_category
+lung,How do I calculate my pack-years for lung cancer screening?,Tanay,American Lung Association (Saved By The Scan eligibility quiz),Pre-screening education
+lung,Is a low-dose CT scan safe? How much radiation is involved?,Tanay,"American Cancer Society (Lung Cancer Screening Guidelines, risks section)",Anxiety Reduction
+lung,What happens during a lung cancer screening CT scan?,Tanay,LUNGevity (Lung Cancer Screening resources),Anxiety Reduction
+lung,What does my Lung-RADS score mean on my screening report?,Tanay,LUNGevity; American College of Radiology (Lung-RADS),Anxiety Reduction
+lung,Do I need lung cancer screening every year if my first scan was normal?,Tanay,American Lung Association,Reinforcing screening importance
+lung,Does private insurance cover lung cancer screening with no copay?,Tanay,American Lung Association (lung cancer screening coverage),Pre-screening education
+lung,"Is a chest X-ray enough to screen for lung cancer, or do I need a CT scan?",Tanay,American Cancer Society,Pre-screening education
+lung,What questions should I ask my doctor at a shared decision-making visit for lung cancer screening?,Tanay,American Lung Association; American Cancer Society,Pre-screening education
+lung,I'm scared of finding out I have lung cancer. Should I still get screened?,Tanay,LUNGevity; American Lung Association,Anxiety Reduction
+lung,I feel fine and have no symptoms. Why do I need lung cancer screening?,Tanay,American Lung Association (Saved By The Scan),Reinforcing screening importance
+lung,lung cancer screening guidelines,Xinhui,American Cancer Society,Pre-screening education
+lung,Can Lung Cancer Be Found Early?,Xinhui,American Cancer Society,Reinforcing screening importance
+lung,lung cancer staging and treatment guidelines,Xinhui,American Cancer Society,Next steps if diagnosed
+lung,Who qualifies for low-dose CT (LDCT) lung cancer screening,Xinhui,WTO,Pre-screening education
+lung,How to prepare for LDCT lung cancer screening,Xinhui,Pamphlets,Pre-screening education
+lung,What happens if lung nodule found on screening,Xinhui,American Cancer Society,Next steps if diagnosed
+lung,Why high-risk patients skip lung cancer screening,Xinhui,Subreddit posts,Reinforcing screening importance
+lung,Coping with false positive lung cancer screening results,Xinhui,Forums,Anxiety Reduction
+lung,Lung nodule on CT scan when is a biopsy needed,Xinhui,Forums,Next steps if diagnosed
+lung,Does Medicare cover LDCT lung cancer screening,Xinhui,American Cancer Society,Pre-screening education
+colon,When should I start colorectal cancer screening? (age 45 vs 50),Yiran,CDC: Screening for Colorectal Cancer,Pre-screening education
+colon,Colonoscopy vs FIT stool test: which screening test is right for me?,Yiran,American Cancer Society colorectal screening guideline,Pre-screening education
+colon,Family history of colon cancer: do I need to start screening earlier?,Yiran,American Cancer Society: who is at increased or high risk,Pre-screening education
+colon,How to make colonoscopy prep easier,Yiran,Mayo Clinic Press: How to make colonoscopy prep easier,Anxiety Reduction
+colon,Does a colonoscopy hurt? What sedation or pain control is used?,Yiran,Mayo Clinic Q and A: Pain management during colonoscopy,Anxiety Reduction
+colon,Why get screened if I have no symptoms?,Yiran,Mayo Clinic Q and A: So you're having a colonoscopy,Reinforcing screening importance
+colon,Colorectal cancer screening saves lives,Yiran,CDC fact sheet: Colorectal Cancer Screening Saves Lives,Reinforcing screening importance
+colon,Can screening prevent colorectal cancer by finding and removing polyps?,Yiran,NCI: Screening Tests to Detect Colorectal Cancer and Polyps,Reinforcing screening importance
+colon,What if polyps were found during my colonoscopy?,Yiran,American Cancer Society: What to Know If Polyps Were Found,Next steps if diagnosed
+colon,What happens after a colorectal cancer diagnosis? Staging and treatment by stage,Yiran,American Cancer Society: colorectal cancer staging; treatment by stage,Next steps if diagnosed
+colon,Does a cancer screening test mean I have cancer,Yule,WHO,Anxiety Reduction
+colon,Is there a colon cancer test I can do at home？,Yule,https://www.cedars-sinai.org/stories-and-insights/healthy-living/at-home-colorectal-cancer-screening,Pre-screening education
+colon,Is colonoscopy painful?,Yule,American Cancer Society,Anxiety Reduction
+colon,How do I talk to my family about getting cancer screening,Yule,American Cancer Society,Reinforcing screening importance
+colon,I don’t know if I can pay for the tests I need. How much does a cancer screening cost?,Yule,American Cancer Society,Pre-screening education
+colon,How to find a doctor for screening and other preventive care,Yule,American Cancer Society,Pre-screening education
+colon,I’m worried or nervous about screening tests.,Yule,American Cancer Society,Anxiety Reduction
+colon,I'm too embarrassed to get a colon cancer test,Yule,WHO,Anxiety Reduction
+colon,What are my treatment options?,Yule,American Cancer Society,Next steps if diagnosed
+colon,How might treatment affect my daily activities? Can I still work full time?,Yule,American Cancer Society,Next steps if diagnosed
+colon,How much time do I need to take off work for a colonoscopy?,Suzie,https://www.pacancercoalition.org/images/resource-thumb/Employer_and_Business_Resources_to_Increase_Cancer_Screenings__Policy_Development_Strategies_for_Employers_to_Promote_Screenings_2025_UPDATED.pdf,Anxiety reduction
+colon,I’m too busy for a colonoscopy — what other screening options do I have?,Suzie,https://www.pacancercoalition.org/images/resource-thumb/Employer_and_Business_Resources_to_Increase_Cancer_Screenings__Policy_Development_Strategies_for_Employers_to_Promote_Screenings_2025_UPDATED.pdf,Pre-screening education / motivation
+colon,How often do I need colorectal cancer screening?,Suzie,American Cancer Society,Pre-screening education
+colon,I’m overdue for colorectal cancer screening — what should I do?,Suzie,American Cancer Society,Reinforcing screening importance
+colon,Which colorectal cancer screening tests do not require bowel prep?,Suzie,American Cancer Society,Pre-screening education / anxiety reduction
+colon,What happens if my stool test for colorectal cancer is abnormal?,Suzie,CDC: Screening for Colorectal Cancer — explains that a positive or abnormal stool-based screening test needs a colonoscopy to complete the screening process.,Next steps after screening
+colon,How long does a colonoscopy take and how long does recovery take?,Suzie,Mayo Clinic: Colonoscopy — describes a typical procedure as about 30–60 minutes and explains post-procedure recovery.,Anxiety reduction
+colon,How do I schedule a colorectal cancer screening?,Suzie,American Cancer Society,Pre-screening education
+colon,How can I get colorectal cancer screening if I have a disability?,Suzie,American Cancer Society,Pre-screening education / anxiety reduction
+colon,What can help me overcome barriers to getting colon cancer screening?,Suzie,https://nccrt.org/resource/2019messagingguidebook/?utm_source=chatgpt.com,Reinforcing screening importance

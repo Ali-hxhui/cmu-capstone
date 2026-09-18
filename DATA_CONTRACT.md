@@ -25,7 +25,11 @@ Use `video_id`, `title`, `description`, `duration_seconds`, `default_language`,
 `default_audio_language`, `transcript_text`, and `transcript_status`.
 
 Run `extract_transcripts.py` on the curated `videos.csv` to create
-`videos_with_transcripts.csv`. That file fills `transcript_text`,
+`videos_with_transcripts.csv`. Then run `package_handoff.py` to copy the curated
+dataset into `data/runs/<handoff-id>/` for the downstream LLM evaluator
+(`RUN_ID=<handoff-id>` in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos)).
+
+That file fills `transcript_text`,
 `transcript_text_normalized`, transcript language, generated/translated flags, source, status,
 and failure reason where YouTube exposes a public transcript. `transcript_status` distinguishes
 retrieved, unavailable, and failed cases. An evaluator must not treat an empty transcript as

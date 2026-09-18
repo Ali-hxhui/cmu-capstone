@@ -95,6 +95,16 @@ python3 scripts/merge_transcript_results.py \
   --output data/curated/screening-v1/videos_with_transcripts.csv
 ```
 
+5. Package for downstream LLM eval (Tanay's `RUN_ID` folder):
+
+```bash
+python3 package_handoff.py \
+  --curated data/curated/screening-v1 \
+  --handoff-id screening-v1
+```
+
+Share `data/runs/screening-v1/` — same layout as `poc-handoff-v1`.
+
 ## Pilot data already collected
 
 - `full-corpus-001`: 50 queries, Top 20, 785 unique videos

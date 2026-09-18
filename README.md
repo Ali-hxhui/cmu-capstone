@@ -11,8 +11,9 @@ education research.
 
 ```
 collect_youtube_data.py   → search_terms/ → data/runs/<run-id>/
-extract_transcripts.py    → videos_with_transcripts.csv
 assemble_dataset.py       → data/curated/<dataset-id>/
+extract_transcripts.py    → videos_with_transcripts.csv
+package_handoff.py        → data/runs/<handoff-id>/ (downstream LLM input)
 scripts/                  → batch split & merge helpers
 search_terms/             → master CSV + 6-person assignments
 config/                   → target counts (200 terms, Top 10)

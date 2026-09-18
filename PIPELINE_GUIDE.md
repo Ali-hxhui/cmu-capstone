@@ -23,33 +23,35 @@ Search Terms → YouTube Retrieval → Structured Dataset → LLM Evaluation →
 
 ---
 
-## 2. Three-Step Pipeline
-
-Think of the pipeline as three factory steps:
+## 2. Four-Step Pipeline
 
 | Step | Script | YouTube Data API? | Output |
 |------|--------|-------------------|--------|
-| 1. Collect metadata | `collect_youtube_data.py` | Yes | `data/runs/<run-id>/` |
-| 2. Extract transcripts | `extract_transcripts.py` | No | `videos_with_transcripts.csv` |
-| 3. Assemble handoff | `assemble_dataset.py` | No | `data/curated/<dataset-id>/` |
+| 1. Collect metadata | `collect_youtube_data.py` | Yes | `data/runs/<member-run-id>/` |
+| 2. Assemble merge | `assemble_dataset.py` | No | `data/curated/<dataset-id>/` |
+| 3. Extract transcripts | `extract_transcripts.py` | No | `videos_with_transcripts.csv` |
+| 4. Package handoff | `package_handoff.py` | No | `data/runs/<handoff-id>/` |
 
 ### Directory design
 
 | Directory | Purpose |
 |-----------|---------|
-| `data/runs/` | Immutable raw runs — never overwritten, supports reproducibility |
-| `data/curated/` | Handoff packages for teammates |
+| `data/runs/<member-run-id>/` | Immutable per-person collection runs |
+| `data/curated/` | Merged working dataset |
+| `data/runs/<handoff-id>/` | Final package for [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos) (`RUN_ID=<handoff-id>`) |
 
 ```mermaid
 flowchart LR
     A[search_terms/search_terms.csv] --> B[collect_youtube_data.py]
-    B --> C[data/runs/run-id/]
-    C --> D[extract_transcripts.py]
-    D --> E[videos_with_transcripts.csv]
+    B --> C[data/runs/member-run/]
     C --> F[assemble_dataset.py]
-    E --> F
     F --> G[data/curated/dataset-id/]
-    G --> H[Shared Folder / Downstream LLM]
+    G --> D[extract_transcripts.py]
+    D --> E[videos_with_transcripts.csv]
+    G --> P[package_handoff.py]
+    E --> P
+    P --> R[data/runs/handoff-id/]
+    R --> H[Downstream LLM eval]
 ```
 
 ---
@@ -207,13 +209,30 @@ Offline merge of `data/runs/` into `data/curated/` for teammate handoff. No API 
 | Add `source_run_ids`, `search_query_count`, `search_queries` JSON |
 | Write `dataset_manifest.json` |
 
-**Note:** `assemble_dataset.py` does **not** copy transcript files automatically. After extraction completes:
+Then extract transcripts on the merged `videos.csv`:
 
 ```bash
-python3 assemble_dataset.py --run-ids full-corpus-001 --dataset-id full-corpus-v1
+python3 extract_transcripts.py \
+  --input data/curated/full-corpus-v1/videos.csv \
+  --output data/curated/full-corpus-v1/videos_with_transcripts.csv \
+  --resume --batch-size 50 --delay-seconds 5
+```
 
-cp data/runs/full-corpus-001/videos_with_transcripts.csv data/curated/full-corpus-v1/
-cp data/runs/full-corpus-001/transcript_errors.csv data/curated/full-corpus-v1/
+### Step 4: `package_handoff.py` — Downstream LLM layout
+
+Copies the curated dataset into `data/runs/<handoff-id>/` — the same file layout as
+`poc-handoff-v1` and Tanay's `RUN_ID` folder in AHN-youtube-videos.
+
+```bash
+python3 package_handoff.py \
+  --curated data/curated/full-corpus-v1 \
+  --handoff-id full-corpus-v1
+```
+
+Downstream command:
+
+```bash
+RUN_ID=full-corpus-v1 python -m src.run_eval
 ```
 
 ---
@@ -357,7 +376,7 @@ Shared Folder/
 
 ## 6. One-Sentence Summary
 
-`collect` retrieves videos and metadata via the official API → `extract` pulls public captions in batches with resume → `assemble` packages offline handoff → downstream uses **`videos_with_transcripts.csv` + `video_query_matches.csv`** for per-query LLM evaluation and ranking.
+`collect` → `assemble` → `extract` → `package_handoff` → downstream uses **`data/runs/<handoff-id>/`** (`videos_with_transcripts.csv` + `video_query_matches.csv`) for per-query LLM evaluation and ranking.
 
 ---
 
@@ -429,6 +448,7 @@ Based on actual runs through 2026-09-17:
 | File | Purpose |
 |------|---------|
 | `README.md` | Command reference and quota notes |
+| `package_handoff.py` | Build `data/runs/<handoff-id>/` for downstream LLM eval |
 | `YOUTUBE_API_KEY.md` | Google Cloud setup for YouTube Data API v3 key |
 | `DATA_CONTRACT.md` | Field definitions and join keys |
 | `search_terms/search_terms.csv` | Master search term list |

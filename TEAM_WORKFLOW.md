@@ -116,7 +116,35 @@ python3 assemble_dataset.py \
 
 Output: `data/curated/screening-v1/`
 
-See `search_terms/COLLECTION_PLAN.md` for transcript splitting and LLM handoff.
+## Step 5 — Extract transcripts (Xinhui)
+
+```bash
+python3 extract_transcripts.py \
+  --input data/curated/screening-v1/videos.csv \
+  --output data/curated/screening-v1/videos_with_transcripts.csv \
+  --error-output data/curated/screening-v1/transcript_errors.csv \
+  --resume --batch-size 50 --delay-seconds 5
+```
+
+## Step 6 — Package for downstream LLM eval (Tanay)
+
+Creates `data/runs/<handoff-id>/` in the same layout as `poc-handoff-v1`:
+
+```bash
+python3 package_handoff.py \
+  --curated data/curated/screening-v1 \
+  --handoff-id screening-v1
+```
+
+Give Tanay the folder `data/runs/screening-v1/` (Shared Folder or zip). He runs:
+
+```bash
+RUN_ID=screening-v1 python -m src.run_eval
+```
+
+in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos).
+
+See `search_terms/COLLECTION_PLAN.md` for transcript splitting details.
 
 ---
 

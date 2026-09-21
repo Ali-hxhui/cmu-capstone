@@ -6,6 +6,8 @@ Repo: https://github.com/Ali-hxhui/cmu-capstone
 
 The working master list is `search_terms/search_terms.csv` (**60 terms**: 30 lung + 30 colon). After a GitHub update: `git pull`, then regenerate your batch before collecting.
 
+**Done means:** you collected your 10 queries **and** extracted transcripts for those videos, then uploaded the whole `data/runs/<your-run-id>/` folder. Do not upload metadata only.
+
 ## Where things live
 
 | What | Where | Who |
@@ -84,35 +86,21 @@ python3 extract_transcripts.py \
 
 Leave `--translate-to-en` off. Stop if the IP is blocked; resume later or switch networks.
 
-## 4. Upload
+## 4. Upload (only after transcripts finish)
 
-Upload the whole folder `data/runs/<your-run-id>/` (now including `videos_with_transcripts.csv` and `transcript_errors.csv` if extraction ran). Do **not** upload `.env`.
+Upload the whole folder `data/runs/<your-run-id>/`. It should include `videos.csv`, `videos_with_transcripts.csv`, and `transcript_errors.csv`. Do **not** upload `.env`.
 
 If you edited terms locally, include your batch CSV in the same Shared Folder path.
 
 ## 5. Merge and package (Xinhui)
 
-After all members finish:
+After all six finished folders are on the Shared Folder:
 
 ```bash
 python3 assemble_dataset.py \
   --run-ids batch-haikuan-lung-001 batch-tanay-lung-001 batch-xinhui-lung-001 \
            batch-yiran-colon-001 batch-yule-colon-001 batch-suzie-colon-001 \
   --dataset-id screening-v1
-```
-
-If some people could not extract, finish leftover videos on the merged `videos.csv`, or split the remainder:
-
-```bash
-python3 scripts/split_transcript_workload.py \
-  --input data/curated/screening-v1/videos.csv \
-  --processed data/curated/screening-v1/videos_with_transcripts.csv \
-  --members 6
-
-python3 scripts/merge_transcript_results.py \
-  --base data/curated/screening-v1/videos_with_transcripts.csv \
-  --chunks data/team_transcripts/member_*.csv \
-  --output data/curated/screening-v1/videos_with_transcripts.csv
 ```
 
 Package for [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos):

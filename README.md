@@ -5,8 +5,10 @@ YouTube metadata and transcript pipeline for AHN lung + colon cancer screening e
 Needs **Python 3.10+**. Each person uses their own YouTube Data API key. Do **not** push results or `.env` to GitHub.
 
 ```
-Search terms → collect (API key) → extract transcripts (no API key) → upload run folder
+Your 10 terms → collect videos → extract transcripts → upload the finished run folder
 ```
+
+Everyone finishes **both videos and transcripts locally**, then uploads. Do not upload a collection-only folder and wait for someone else to extract.
 
 **Docs:** [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) · [YOUTUBE_API_KEY.md](YOUTUBE_API_KEY.md) · [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md) · [DATA_CONTRACT.md](DATA_CONTRACT.md)
 
@@ -70,12 +72,12 @@ python3 extract_transcripts.py \
   --resume --batch-size 50 --delay-seconds 5
 ```
 
-Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later.
+Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later until your run is finished. A few videos with `transcript_unavailable` is normal; a long block is not.
 
-### 5. Upload your run folder
+### 5. Upload only when both steps are done
 
-Upload the whole directory `data/runs/<your-run-id>/` to the Shared Folder (including `videos_with_transcripts.csv` if step 4 finished). Do not upload `.env`.
+The folder must contain `videos.csv` **and** `videos_with_transcripts.csv`. Then upload the whole directory `data/runs/<your-run-id>/` to the Shared Folder. Do not upload `.env`.
 
-Xinhui merges everyone’s folders later — see [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md).
+Xinhui only merges finished folders — see [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md).
 
 If `search_terms/search_terms.csv` changes on GitHub: `git pull origin main`, redo step 2, then collect with a **new** run-id.

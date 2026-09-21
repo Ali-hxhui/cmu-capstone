@@ -1,7 +1,0 @@
-member_id,member_name,cancer_domain,start_at,max_queries,expected_run_id,status,notes
-haikuan,haikuan,lung,0,0,batch-haikuan-lung-pilot,pending,No lung terms yet — add new rows with contributor=haikuan
-tanay,tanay,lung,0,10,batch-tanay-lung-pilot,pending,Current lung terms rows 1-10
-xinhui,xinhui,lung,10,10,batch-xinhui-lung-pilot,pending,Current lung terms rows 11-20
-yiran,yiran,colon,0,10,batch-yiran-colon-pilot,pending,Current colon terms rows 1-10
-yule,yule,colon,10,10,batch-yule-colon-pilot,pending,Current colon terms rows 11-20
-suzie,suzie,colon,20,10,batch-suzie-colon-pilot,pending,Current colon terms rows 21-30

@@ -1,0 +1,7 @@
+member_id,member_name,cancer_domain,start_at,max_queries,expected_run_id,status,notes
+haikuan,haikuan,lung,0,10,batch-haikuan-lung-001,pending,Current lung terms 1-10
+tanay,tanay,lung,10,10,batch-tanay-lung-001,pending,Current lung terms 11-20
+xinhui,xinhui,lung,20,10,batch-xinhui-lung-001,pending,Current lung terms 21-30
+yiran,yiran,colon,0,10,batch-yiran-colon-001,pending,Current colon terms 1-10
+yule,yule,colon,10,10,batch-yule-colon-001,pending,Current colon terms 11-20
+suzie,suzie,colon,20,10,batch-suzie-colon-001,pending,Current colon terms 21-30

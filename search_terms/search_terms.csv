@@ -1,4 +1,14 @@
 cancer_domain,search_query,contributor,source,scope_category
+lung,I quit smoking more than 15 years ago. Could I still be eligible for annual low-dose CT lung cancer screening under current guidelines?,Haikuan,American Cancer Society,Pre-screening education
+lung,"I have never smoked but was exposed to radon or asbestos. Does this increase my lung cancer risk, and should I discuss screening with a clinician?",Haikuan,American Cancer Society,Pre-screening education
+lung,When should someone stop getting annual low-dose CT lung cancer screening under ACS and USPSTF guidelines?,Haikuan,American Cancer Society,Pre-screening education
+lung,How can I find a qualified low-dose CT lung cancer screening center near me?,Haikuan,American Lung Association,Pre-screening education
+lung,"When and how will I receive my low-dose CT screening results, and who will explain them?",Haikuan,American Lung Association,Anxiety Reduction
+lung,Can a low-dose CT screening scan miss lung cancer?,Haikuan,American Cancer Society,Anxiety Reduction
+lung,Can annual low-dose CT screening lower my risk of dying from lung cancer?,Haikuan,American Cancer Society,Reinforcing screening importance
+lung,Does lung cancer screening replace quitting smoking?,Haikuan,American Cancer Society,Reinforcing screening importance
+lung,"If my low-dose CT screening result is abnormal, what follow-up might I need and when?",Haikuan,LUNGevity,Next steps if diagnosed
+lung,Which specialists may be part of my care team if lung cancer is diagnosed after screening?,Haikuan,LUNGevity,Next steps if diagnosed
 lung,How do I calculate my pack-years for lung cancer screening?,Tanay,American Lung Association (Saved By The Scan eligibility quiz),Pre-screening education
 lung,Is a low-dose CT scan safe? How much radiation is involved?,Tanay,"American Cancer Society (Lung Cancer Screening Guidelines, risks section)",Anxiety Reduction
 lung,What happens during a lung cancer screening CT scan?,Tanay,LUNGevity (Lung Cancer Screening resources),Anxiety Reduction
@@ -30,7 +40,7 @@ colon,Can screening prevent colorectal cancer by finding and removing polyps?,Yi
 colon,What if polyps were found during my colonoscopy?,Yiran,American Cancer Society: What to Know If Polyps Were Found,Next steps if diagnosed
 colon,What happens after a colorectal cancer diagnosis? Staging and treatment by stage,Yiran,American Cancer Society: colorectal cancer staging; treatment by stage,Next steps if diagnosed
 colon,Does a cancer screening test mean I have cancer,Yule,WHO,Anxiety Reduction
-colon,Is there a colon cancer test I can do at home？,Yule,https://www.cedars-sinai.org/stories-and-insights/healthy-living/at-home-colorectal-cancer-screening,Pre-screening education
+colon,Is there a colon cancer test I can do at home?,Yule,https://www.cedars-sinai.org/stories-and-insights/healthy-living/at-home-colorectal-cancer-screening,Pre-screening education
 colon,Is colonoscopy painful?,Yule,American Cancer Society,Anxiety Reduction
 colon,How do I talk to my family about getting cancer screening,Yule,American Cancer Society,Reinforcing screening importance
 colon,I don’t know if I can pay for the tests I need. How much does a cancer screening cost?,Yule,American Cancer Society,Pre-screening education

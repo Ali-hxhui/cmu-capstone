@@ -128,12 +128,4 @@ request a quota increase in the Cloud Console (approval is not guaranteed for ne
 
 ## Related commands
 
-```bash
-# Dry run (no API calls) — check config and input file
-python3 collect_youtube_data.py --dry-run --max-queries 2
-
-# Small live test
-python3 collect_youtube_data.py --top-n 5 --max-queries 2 --run-id test-001
-```
-
-See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for collection commands.
+See [README.md](README.md) for the day-1 collect + transcript commands.

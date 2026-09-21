@@ -16,7 +16,7 @@ search_terms.csv → collect_youtube_data.py → data/runs/<member-run-id>/
 | 3. Extract | `extract_transcripts.py` | No | `videos_with_transcripts.csv` |
 | 4. Package | `package_handoff.py` | No | `data/runs/<handoff-id>/` for [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos) |
 
-Team commands live in [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
+Each member collects and extracts on their own `data/runs/<run-id>/`. Merge and package stay with Xinhui — [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
 
 ## 1. `collect_youtube_data.py`
 

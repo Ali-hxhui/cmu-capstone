@@ -25,7 +25,7 @@ Suggested access: Xinhui **Admin**, others **Read**.
 
 ## Ownership
 
-| Domain | Members | Target each (200-term plan) | Current 50-term status |
+| Domain | Members | Target each (200-term plan) | Current 60-term status |
 |--------|---------|-----------------------------|------------------------|
 | Lung | haikuan, tanay, xinhui | ~33–34 | 10 each, ready to collect |
 | Colon | yiran, yule, suzie | ~33–34 | 10 each, ready to collect |
@@ -65,7 +65,7 @@ That writes `search_terms/batches/<your_name>.csv`. Use the `expected_run_id` fr
 python3 collect_youtube_data.py \
   --input search_terms/batches/tanay.csv \
   --top-n 10 \
-  --run-id batch-tanay-lung-pilot
+  --run-id batch-tanay-lung-001
 ```
 
 If your name is skipped with 0 terms, you have nothing to collect yet.
@@ -78,7 +78,7 @@ Does **not** use the Data API key or quota. Run only after `videos.csv` exists.
 
 ```bash
 python3 extract_transcripts.py \
-  --input data/runs/batch-tanay-lung-pilot/videos.csv \
+  --input data/runs/batch-tanay-lung-001/videos.csv \
   --resume --batch-size 50 --delay-seconds 5
 ```
 
@@ -96,8 +96,8 @@ After all members finish:
 
 ```bash
 python3 assemble_dataset.py \
-  --run-ids batch-tanay-lung-pilot batch-xinhui-lung-pilot \
-           batch-yiran-colon-pilot batch-yule-colon-pilot batch-suzie-colon-pilot \
+  --run-ids batch-haikuan-lung-001 batch-tanay-lung-001 batch-xinhui-lung-001 \
+           batch-yiran-colon-001 batch-yule-colon-001 batch-suzie-colon-001 \
   --dataset-id screening-v1
 ```
 

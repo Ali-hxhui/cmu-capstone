@@ -1,8 +1,7 @@
 # How to Get a YouTube Data API Key
 
 Each team member should create **their own** API key in Google Cloud. This spreads out the
-daily quota (~10,000 units per project by default) and avoids one person blocking everyone
-else's collection runs.
+daily quota (~10,000 units per project by default) .
 
 ---
 

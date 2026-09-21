@@ -1,6 +1,6 @@
 # Search terms
 
-Working list: **`search_terms.csv`**. Clone-and-run steps: [TEAM_WORKFLOW.md](../TEAM_WORKFLOW.md).
+Working list: **`search_terms.csv`**. Clone-and-run steps: [README.md](../README.md).
 
 When this file is replaced on GitHub, pull and regenerate batches before collecting.
 

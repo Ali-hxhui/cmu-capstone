@@ -8,9 +8,11 @@ Needs **Python 3.10+**. Each person uses their own YouTube Data API key. Do **no
 Your 10 terms → collect videos → extract transcripts → upload the finished run folder
 ```
 
-Everyone finishes **both videos and transcripts locally**, then uploads. Do not upload a collection-only folder and wait for someone else to extract.
+Everyone finishes **both videos and transcripts locally**, then uploads. Do not upload a collection-only folder.
 
-**Docs:** [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) · [YOUTUBE_API_KEY.md](YOUTUBE_API_KEY.md) · [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md) · [DATA_CONTRACT.md](DATA_CONTRACT.md)
+**Other docs:** [YOUTUBE_API_KEY.md](YOUTUBE_API_KEY.md) · [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md) · [DATA_CONTRACT.md](DATA_CONTRACT.md)
+
+Code lives on GitHub. Large CSVs go to the Shared Folder (`data/` is gitignored).
 
 ## What each person does
 
@@ -40,8 +42,6 @@ python3 test_youtube_api.py
 
 ### 2. Build your personal term file
 
-This reads the 60-term master list and writes `search_terms/batches/` (not in git):
-
 ```bash
 python3 scripts/assign_collection_batches.py \
   --assignments search_terms/assignments/collection_assignments_current.csv
@@ -51,6 +51,8 @@ Confirm `search_terms/batches/<your_name>.csv` exists and has 10 rows.
 
 ### 3. Collect videos (uses your API key)
 
+Each query uses about 100 quota units (10 queries ≈ 1,000).
+
 ```bash
 python3 collect_youtube_data.py \
   --input search_terms/batches/tanay.csv \
@@ -58,13 +60,11 @@ python3 collect_youtube_data.py \
   --run-id batch-tanay-lung-001
 ```
 
-Creates `data/runs/batch-tanay-lung-001/videos.csv`. If that folder already exists, pick a new run-id or delete it — the script will not overwrite.
+Creates `data/runs/batch-tanay-lung-001/videos.csv`. If that folder already exists, the script will not overwrite.
 
 Optional check with no API calls: add `--dry-run`.
 
 ### 4. Extract public transcripts (no API key)
-
-Only after `videos.csv` exists:
 
 ```bash
 python3 extract_transcripts.py \
@@ -72,12 +72,27 @@ python3 extract_transcripts.py \
   --resume --batch-size 50 --delay-seconds 5
 ```
 
-Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later until your run is finished. A few videos with `transcript_unavailable` is normal; a long block is not.
+Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later. A few `transcript_unavailable` videos are normal.
 
 ### 5. Upload only when both steps are done
 
-The folder must contain `videos.csv` **and** `videos_with_transcripts.csv`. Then upload the whole directory `data/runs/<your-run-id>/` to the Shared Folder. Do not upload `.env`.
-
-Xinhui only merges finished folders — see [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md).
+The folder must contain `videos.csv` and `videos_with_transcripts.csv`. Upload the whole `data/runs/<your-run-id>/` directory to the Shared Folder. Do not upload `.env`.
 
 If `search_terms/search_terms.csv` changes on GitHub: `git pull origin main`, redo step 2, then collect with a **new** run-id.
+
+To add terms later: copy `search_terms/search_terms.template.csv`, set `contributor` to your name, send the rows to Xinhui so the master file stays in sync.
+
+## After everyone uploads (Xinhui)
+
+```bash
+python3 assemble_dataset.py \
+  --run-ids batch-haikuan-lung-001 batch-tanay-lung-001 batch-xinhui-lung-001 \
+           batch-yiran-colon-001 batch-yule-colon-001 batch-suzie-colon-001 \
+  --dataset-id screening-v1
+
+python3 package_handoff.py \
+  --curated data/curated/screening-v1 \
+  --handoff-id screening-v1
+```
+
+Tanay: `RUN_ID=screening-v1 python -m src.run_eval` in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos).

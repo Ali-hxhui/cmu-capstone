@@ -111,8 +111,7 @@ If you see an error:
 
 Check usage: **APIs & Services** → **Dashboard** → **YouTube Data API v3** → **Quotas**.
 
-For the full corpus (200 search terms), split work across **6 people** and **2+ days**, or
-request a quota increase in the Cloud Console (approval is not guaranteed for new projects).
+For the full corpus (200 search terms), split work across **6 people** and **2+ days**.
 
 ---
 

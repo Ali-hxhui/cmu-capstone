@@ -1,35 +1,48 @@
 # Team Workflow
 
-Target: **100 lung + 100 colon search terms**, **Top 10 videos** each.
-
-## How we collaborate
-
-| What | Where | Who |
-|------|-------|-----|
-| Code and docs | **GitHub** (clone / pull only) | Xinhui maintains; others read |
-| Search terms | **Local CSV** on each machine | Each member edits their own batch |
-| Collection outputs | **Shared Folder** | Each member uploads their run folder |
-| Final merged dataset | **Local + Shared Folder** | Xinhui runs `assemble_dataset.py` |
-
-**Teammates do not need to push to GitHub.** Clone the repo, run locally, upload results.
+Target: **100 lung + 100 colon** search terms, **Top 10** videos each. Current master file: **50 terms** (20 lung, 30 colon).
 
 Repo: https://github.com/Ali-hxhui/cmu-capstone
 
----
+## Where things live
 
-## Search term ownership
+| What | Where | Who |
+|------|--------|-----|
+| Code and English docs | **GitHub** | Xinhui maintains; others clone / pull |
+| Search terms | `search_terms/search_terms.csv` | Edit locally; send updates to Xinhui |
+| Collection / transcript CSVs | **Shared Folder** (`data/` is gitignored) | Each member uploads their run folder |
+| API keys | Local `.env` | One key per person |
+| Personal notes | `local/` (gitignored) | Keep off GitHub |
 
-| Cancer type | Members | Target per person |
-|-------------|---------|-------------------|
-| **Lung** | haikuan, tanay, xinhui | ~33–34 terms |
-| **Colon** | yiran, yule, suzie | ~33–34 terms |
+Teammates do **not** need to push. Clone, run locally, upload results.
 
-Use your name in the `contributor` column. If you add new terms locally, send your updated CSV
-to **Xinhui** so the master file on GitHub stays in sync.
+### GitHub vs Shared Folder
 
----
+Tracked: Python scripts, `search_terms/` master + assignments, English docs, `requirements.txt`, `.env.example`.
 
-## First-time setup (every member)
+Not tracked: `.env`, `data/`, generated `search_terms/batches/*.csv`, `.venv/`, `local/`, PDFs / Office files.
+
+Suggested access: Xinhui **Admin**, others **Read**. Grant **Write** only if the team will edit `search_terms.csv` on GitHub. Then `git pull` before editing, and only one person should change the master file at a time.
+
+## Ownership
+
+| Domain | Members | Target each (200-term plan) | Current 50-term status |
+|--------|---------|-----------------------------|------------------------|
+| Lung | haikuan, tanay, xinhui | ~33–34 | tanay 10, xinhui 10 ready; haikuan 0 (add terms first) |
+| Colon | yiran, yule, suzie | ~33–34 | 10 each, ready to collect |
+
+Use your name in `contributor`. New terms: copy a row from `search_terms/search_terms.template.csv`, set `cancer_domain` to `lung` or `colon`, keep lung rows together then colon rows.
+
+Assignment tables:
+
+| File | When |
+|------|------|
+| `search_terms/assignments/collection_assignments_pilot50.csv` | Current 50 terms |
+| `search_terms/assignments/collection_assignments.csv` | Final 200-term split |
+
+`search_terms/poc-handoff.csv` is the older 10-term POC list, not the working master.
+
+## First-time setup
 
 ```bash
 git clone https://github.com/Ali-hxhui/cmu-capstone.git
@@ -40,35 +53,16 @@ cp .env.example .env
 python3 test_youtube_api.py
 ```
 
-When scripts or docs are updated on GitHub:
+Later: `git pull origin main` when scripts or docs change.
 
-```bash
-git pull origin main
-```
-
----
-
-## Step 1 — Prepare your search terms (local)
-
-Generate your batch from the master file:
+## Collect (every member)
 
 ```bash
 python3 scripts/assign_collection_batches.py \
   --assignments search_terms/assignments/collection_assignments_pilot50.csv
 ```
 
-Output: `search_terms/batches/<your_name>.csv`
-
-Edit that file (or a personal copy) to add terms. Set `contributor` to your name and keep
-`cancer_domain` as `lung` or `colon`.
-
-**Optional:** email or Shared-Drive your updated CSV to Xinhui for the master list.
-
----
-
-## Step 2 — Collect videos (Top 10)
-
-Use the `expected_run_id` from `search_terms/assignments/collection_assignments_pilot50.csv`.
+That writes `search_terms/batches/<your_name>.csv`. Then collect with a **unique** `--run-id` (use `expected_run_id` from the assignments file):
 
 ```bash
 python3 collect_youtube_data.py \
@@ -77,35 +71,15 @@ python3 collect_youtube_data.py \
   --run-id batch-tanay-lung-pilot
 ```
 
-Use your own `--input` and `--run-id`. Each `--run-id` must be **unique** across the team.
+When the 200-term list is ready, regenerate batches without `--assignments` (defaults to `collection_assignments.csv`) and use `--top-n 10`.
 
----
+**Quota:** each query ≈ 100 units. 200 queries ≈ 20,000 units. Default daily budget ≈ 10,000, so split across people and days. A 33–34 query batch ≈ 3,300–3,400 units.
 
-## Step 3 — Upload results to Shared Folder
+Upload the whole folder `data/runs/<your-run-id>/` to the Shared Folder. Include your batch CSV if you changed terms. Do **not** upload `.env`.
 
-Upload the entire folder `data/runs/<your-run-id>/` to the team Shared Folder
-(e.g. `Shared Folder/runs/tanay/`).
+Required run files: `queries.csv`, `videos.csv`, `video_query_matches.csv`, `collection_errors.csv`, `run_manifest.json`, `dataset_qa.json`.
 
-**Required files:**
-
-| File | Purpose |
-|------|---------|
-| `queries.csv` | Search terms used in this run |
-| `videos.csv` | Deduplicated video metadata |
-| `video_query_matches.csv` | Query–video pairs with rank |
-| `collection_errors.csv` | API errors (if any) |
-| `run_manifest.json` | Run config and checksum |
-| `dataset_qa.json` | Summary stats |
-
-Do **not** upload `.env` or API keys.
-
-If you changed search terms locally, include your batch CSV in the same Shared Folder path.
-
----
-
-## Step 4 — Xinhui merges all runs
-
-After all members finish, download run folders into `data/runs/` and merge:
+## Merge, transcripts, handoff (Xinhui)
 
 ```bash
 python3 assemble_dataset.py \
@@ -114,21 +88,30 @@ python3 assemble_dataset.py \
   --dataset-id screening-v1
 ```
 
-Output: `data/curated/screening-v1/`
-
-## Step 5 — Extract transcripts (Xinhui)
+Transcripts (does not use Data API quota). Prefer small batches; leave `--translate-to-en` off for English corpora:
 
 ```bash
-python3 extract_transcripts.py \
+caffeinate -i -m -s python3 -u extract_transcripts.py \
   --input data/curated/screening-v1/videos.csv \
   --output data/curated/screening-v1/videos_with_transcripts.csv \
   --error-output data/curated/screening-v1/transcript_errors.csv \
   --resume --batch-size 50 --delay-seconds 5
 ```
 
-## Step 6 — Package for downstream LLM eval (Tanay)
+Optional 6-way split if the team extracts in parallel:
 
-Creates `data/runs/<handoff-id>/` in the same layout as `poc-handoff-v1`:
+```bash
+python3 scripts/split_transcript_workload.py \
+  --input data/curated/screening-v1/videos.csv \
+  --members 6
+
+python3 scripts/merge_transcript_results.py \
+  --base data/curated/screening-v1/videos_with_transcripts.csv \
+  --chunks data/team_transcripts/member_*.csv \
+  --output data/curated/screening-v1/videos_with_transcripts.csv
+```
+
+Package for [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos):
 
 ```bash
 python3 package_handoff.py \
@@ -136,37 +119,14 @@ python3 package_handoff.py \
   --handoff-id screening-v1
 ```
 
-Give Tanay the folder `data/runs/screening-v1/` (Shared Folder or zip). He runs:
+Tanay: `RUN_ID=screening-v1 python -m src.run_eval`.
 
-```bash
-RUN_ID=screening-v1 python -m src.run_eval
-```
+Pilot already collected: `full-corpus-001` (50 queries, Top 20, 785 unique videos). Decide whether to keep it as a dev set or re-collect at Top 10 when all 200 terms are ready. Script behavior and corpus stats: [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md).
 
-in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos).
+## Git FAQ
 
-See `search_terms/COLLECTION_PLAN.md` for transcript splitting details.
+**Git asks for a password when pushing?** Use a GitHub Personal Access Token, or `gh auth login`.
 
----
+**`.env` was pushed by mistake?** Rotate the API key in Google Cloud and remove it from git history.
 
-## Current progress (50 terms)
-
-| Member | Domain | Terms now | Status |
-|--------|--------|-----------|--------|
-| tanay | lung | 10 | ready to collect |
-| xinhui | lung | 10 | ready to collect |
-| haikuan | lung | 0 | add terms first |
-| yiran | colon | 10 | ready to collect |
-| yule | colon | 10 | ready to collect |
-| suzie | colon | 10 | ready to collect |
-
----
-
-## Optional: push search terms via GitHub
-
-Only if the team prefers git over Shared Folder for term updates:
-
-1. Repo admin grants **Write** access
-2. `git pull` → edit `search_terms/search_terms.csv` → commit → push
-3. See `GITHUB_SETUP.md` for conflict-avoidance rules
-
-This is **not required** for the default workflow above.
+**No GitHub account?** https://github.com/signup

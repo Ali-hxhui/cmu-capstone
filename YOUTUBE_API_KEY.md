@@ -136,4 +136,4 @@ python3 collect_youtube_data.py --dry-run --max-queries 2
 python3 collect_youtube_data.py --top-n 5 --max-queries 2 --run-id test-001
 ```
 
-See [README.md](README.md) and [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for the full collection workflow.
+See [TEAM_WORKFLOW.md](TEAM_WORKFLOW.md) for collection commands.

@@ -1,22 +1,25 @@
 # Pipeline Guide
 
-How the four scripts turn search terms into a dataset for per-query LLM evaluation.
+How search terms become a cleaned dataset for the ranking model in this repo.
 
 ```
 search_terms.csv → collect_youtube_data.py → data/runs/<member-run-id>/
-                 → assemble_dataset.py     → data/curated/<dataset-id>/
                  → extract_transcripts.py  → videos_with_transcripts.csv
-                 → package_handoff.py      → data/runs/<handoff-id>/
+                 → git push that run folder
+                 → assemble_dataset.py     → data/curated/<dataset-id>/
+                 → clean                   → tables the ranking entry point reads
 ```
 
-| Step | Script | YouTube Data API? | Output |
-|------|--------|-------------------|--------|
-| 1. Collect | `collect_youtube_data.py` | Yes | `data/runs/<run-id>/` |
-| 2. Assemble | `assemble_dataset.py` | No | `data/curated/<dataset-id>/` |
-| 3. Extract | `extract_transcripts.py` | No | `videos_with_transcripts.csv` |
-| 4. Package | `package_handoff.py` | No | `data/runs/<handoff-id>/` for [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos) |
+| Step | Who | Script | YouTube Data API? | Output |
+|------|-----|--------|-------------------|--------|
+| 1. Collect | each of the six | `collect_youtube_data.py` | Yes | `data/runs/<run-id>/` |
+| 2. Extract | same person | `extract_transcripts.py` | No | `videos_with_transcripts.csv` in that run folder |
+| 3. Push | same person | git | No | only `data/runs/<their-run-id>/` on `main` |
+| 4. Assemble | next teammate | `assemble_dataset.py` | No | `data/curated/<dataset-id>/` |
+| 5. Clean | same teammate | their cleaning code | No | cleaned tables committed for ranking |
+| 6. Rank | ranking entry point | separate from collection | No | scores per query |
 
-Each member collects and extracts on their own `data/runs/<run-id>/`. Team commands: [README.md](README.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
+Each member collects and extracts on their own `data/runs/<run-id>/`, then pushes that folder. The next teammate merges and cleans. Ranking stays a separate entry point so a collection run never starts the model. Team commands: [README.md](README.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
 
 ## 1. `collect_youtube_data.py`
 
@@ -58,9 +61,11 @@ Leave `--translate-to-en` off for English corpora (extra request on every miss).
 
 Useful fields: `transcript_text`, `transcript_text_normalized`, `transcript_status`, `transcript_is_generated`, `transcript_language`. An empty transcript is not evidence the video has no educational value. YouTube `caption_available=true` is uncommon (~23% in the pilot); actual retrieval on processed videos was ~94% because auto-captions are often public.
 
-## 4. `package_handoff.py`
+## 4. Clean, then rank
 
-Copies the curated folder into `data/runs/<handoff-id>/` in the layout Tanay's evaluator expects (`RUN_ID=<handoff-id>`).
+After `assemble_dataset.py`, clean the curated tables and commit them. The ranking code lives in this repo and reads those cleaned tables. Its entry point is separate from `collect_youtube_data.py` and `extract_transcripts.py`.
+
+`package_handoff.py` can still copy a curated folder into `data/runs/<handoff-id>/` when the ranking code expects that layout. It does not call the model.
 
 ## Data model
 

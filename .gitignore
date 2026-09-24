@@ -4,8 +4,15 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Large generated data — share via team drive, not git
-data/
+# Commit this round's collection runs and the cleaned dataset.
+# Older local pilots stay out of git.
+data/*
+!data/runs/
+data/runs/*
+!data/runs/batch-*/
+!data/curated/
+data/curated/*
+!data/curated/screening-*/
 
 # Generated batch slices (regenerate with scripts/assign_collection_batches.py)
 search_terms/batches/*.csv

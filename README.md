@@ -2,17 +2,16 @@
 
 YouTube metadata and transcript pipeline for AHN lung + colon cancer screening education.
 
-Needs **Python 3.10+**. Each person uses their own YouTube Data API key. Do **not** push results or `.env` to GitHub.
+Needs **Python 3.10+**. Each person uses their own YouTube Data API key. Do **not** push `.env`.
 
 ```
-Your 20 terms → collect videos → extract transcripts → upload the finished run folder
+Your 20 terms → collect videos → extract transcripts → push your run folder
+             → merge and clean → ranking model
 ```
 
-Everyone finishes **both videos and transcripts locally**, then uploads. Do not upload a collection-only folder.
+Six people collect. The next teammate merges those runs, cleans the tables, and hands them to the ranking model in this same repo. Collection scripts and the ranking entry point stay separate.
 
 **Other docs:** [YOUTUBE_API_KEY.md](YOUTUBE_API_KEY.md) · [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md) · [DATA_CONTRACT.md](DATA_CONTRACT.md)
-
-Code lives on GitHub. Large CSVs go to the Shared Folder (`data/` is gitignored).
 
 ## What each person does
 
@@ -74,25 +73,30 @@ python3 extract_transcripts.py \
 
 Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later. A few `transcript_unavailable` videos are normal.
 
-### 5. Upload only when both steps are done
+### 5. Push only your finished run
 
-The folder must contain `videos.csv` and `videos_with_transcripts.csv`. Upload the whole `data/runs/<your-run-id>/` directory to the Shared Folder. Do not upload `.env`.
+Commit `data/runs/<your-run-id>/` only after it contains both `videos.csv` and `videos_with_transcripts.csv`. Do not commit `.env`, and do not commit another person's run folder.
+
+```bash
+git pull origin main
+git add data/runs/batch-tanay-lung-001
+git commit -m "Add batch-tanay-lung-001 videos and transcripts."
+git push origin main
+```
+
+Each run-id is a different folder, so the six pushes do not overwrite each other.
 
 If `search_terms/search_terms.csv` changes on GitHub: `git pull origin main`, redo step 2, then collect with a **new** run-id.
 
-To add terms later: copy `search_terms/search_terms.template.csv`, set `contributor` to your name, send the rows to Xinhui so the master file stays in sync.
+## After the six runs are on main
 
-## After everyone uploads (Xinhui)
+One teammate pulls `main`, merges the six run folders, cleans the combined tables, and commits that cleaned dataset. Ranking reads the cleaned tables through its own entry point. Do not run ranking inside `collect_youtube_data.py` or `extract_transcripts.py`.
 
 ```bash
 python3 assemble_dataset.py \
   --run-ids batch-haikuan-lung-001 batch-tanay-lung-001 batch-xinhui-lung-001 \
            batch-yiran-colon-001 batch-yule-colon-001 batch-suzie-colon-001 \
   --dataset-id screening-v1
-
-python3 package_handoff.py \
-  --curated data/curated/screening-v1 \
-  --handoff-id screening-v1
 ```
 
-Tanay: `RUN_ID=screening-v1 python -m src.run_eval` in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos).
+`assemble_dataset.py` writes `data/curated/screening-v1/`. Cleaning happens on that folder. The cleaned files are the input the ranking code expects. Field names: [DATA_CONTRACT.md](DATA_CONTRACT.md).

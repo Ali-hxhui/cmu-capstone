@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--assignments",
-        default="search_terms/assignments/collection_assignments.csv",
+        default="search_terms/assignments/collection_assignments_current.csv",
         help="Member assignment table with cancer_domain, start_at, and max_queries.",
     )
     parser.add_argument(

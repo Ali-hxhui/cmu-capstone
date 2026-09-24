@@ -24,12 +24,9 @@ components should select a run ID explicitly rather than relying on a mutable â€
 Use `video_id`, `title`, `description`, `duration_seconds`, `default_language`,
 `default_audio_language`, `transcript_text`, and `transcript_status`.
 
-Run `extract_transcripts.py` on the curated `videos.csv` to create
-`videos_with_transcripts.csv`. Then run `package_handoff.py` to copy the curated
-dataset into `data/runs/<handoff-id>/` for the downstream LLM evaluator
-(`RUN_ID=<handoff-id>` in [AHN-youtube-videos](https://github.com/tanaymit/AHN-youtube-videos)).
+Each collector runs `extract_transcripts.py` on their own `data/runs/<run-id>/videos.csv` and pushes that run folder. The next teammate runs `assemble_dataset.py` on the six run ids, cleans `data/curated/<dataset-id>/`, and commits the cleaned tables. The ranking entry point in this repo reads those cleaned tables. It does not read a single person's run folder directly.
 
-That file fills `transcript_text`,
+`videos_with_transcripts.csv` fills `transcript_text`,
 `transcript_text_normalized`, transcript language, generated/translated flags, source, status,
 and failure reason where YouTube exposes a public transcript. `transcript_status` distinguishes
 retrieved, unavailable, and failed cases. An evaluator must not treat an empty transcript as

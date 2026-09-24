@@ -42,7 +42,7 @@ python3 test_youtube_api.py
 ### 2. Build your personal term file
 
 ```bash
-python3 scripts/assign_collection_batches.py \
+python3 assign_collection_batches.py \
   --assignments search_terms/assignments/collection_assignments_current.csv
 ```
 

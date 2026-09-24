@@ -9,5 +9,3 @@ When this file is replaced on GitHub, pull and regenerate batches before collect
 | `search_terms.csv` | Master list |
 | `assignments/collection_assignments_current.csv` | Split for the current 120-term list (20 terms each) |
 | `batches/` | Generated per-member CSVs (gitignored) |
-
-Older POC terms and count snapshots: [archive/](../archive/).

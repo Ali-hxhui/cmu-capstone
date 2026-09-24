@@ -14,7 +14,7 @@ data/runs/*
 data/curated/*
 !data/curated/screening-*/
 
-# Generated batch slices (regenerate with scripts/assign_collection_batches.py)
+# Generated batch slices (regenerate with assign_collection_batches.py)
 search_terms/batches/*.csv
 search_terms/batches/transcript_chunks/
 

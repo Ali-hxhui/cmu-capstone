@@ -8,7 +8,7 @@ When this file is replaced on GitHub, pull and regenerate batches before collect
 |------|------|
 | `search_terms.csv` | Master list |
 | `search_terms.template.csv` | Blank row to copy |
-| `assignments/collection_assignments_current.csv` | Split for the current 60-term list |
+| `assignments/collection_assignments_current.csv` | Split for the current 120-term list (20 terms each) |
 | `assignments/collection_assignments.csv` | 200-term split (use after the master list is complete) |
 | `batches/` | Generated per-member CSVs (gitignored) |
 

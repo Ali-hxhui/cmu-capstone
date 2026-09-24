@@ -1,7 +1,7 @@
 member_id,member_name,cancer_domain,start_at,max_queries,expected_run_id,status,notes
-haikuan,haikuan,lung,0,10,batch-haikuan-lung-001,pending,Current lung terms 1-10
-tanay,tanay,lung,10,10,batch-tanay-lung-001,pending,Current lung terms 11-20
-xinhui,xinhui,lung,20,10,batch-xinhui-lung-001,pending,Current lung terms 21-30
-yiran,yiran,colon,0,10,batch-yiran-colon-001,pending,Current colon terms 1-10
-yule,yule,colon,10,10,batch-yule-colon-001,pending,Current colon terms 11-20
-suzie,suzie,colon,20,10,batch-suzie-colon-001,pending,Current colon terms 21-30
+haikuan,haikuan,lung,0,20,batch-haikuan-lung-001,pending,Lung terms 1-20 (original 10 plus 10 new)
+tanay,tanay,lung,20,20,batch-tanay-lung-001,pending,Lung terms 21-40 (original 10 plus 10 new)
+xinhui,xinhui,lung,40,20,batch-xinhui-lung-001,pending,Lung terms 41-60 (original 10 plus 10 new)
+yiran,yiran,colon,0,20,batch-yiran-colon-001,pending,Colon terms 1-20 (original 10 plus 10 new)
+yule,yule,colon,20,20,batch-yule-colon-001,pending,Colon terms 21-40 (original 10 plus 10 new)
+suzie,suzie,colon,40,20,batch-suzie-colon-001,pending,Colon terms 41-60 (original 10 plus 10 new)

@@ -5,7 +5,7 @@ YouTube metadata and transcript pipeline for AHN lung + colon cancer screening e
 Needs **Python 3.10+**. Each person uses their own YouTube Data API key. Do **not** push results or `.env` to GitHub.
 
 ```
-Your 10 terms → collect videos → extract transcripts → upload the finished run folder
+Your 20 terms → collect videos → extract transcripts → upload the finished run folder
 ```
 
 Everyone finishes **both videos and transcripts locally**, then uploads. Do not upload a collection-only folder.
@@ -20,12 +20,12 @@ Copy the **`--input`** and **`--run-id`** from your row. Do not invent a differe
 
 | You | Your terms | Collect / extract with |
 |-----|------------|------------------------|
-| haikuan | `search_terms/batches/haikuan.csv` (10 lung) | `--run-id batch-haikuan-lung-001` |
-| tanay | `search_terms/batches/tanay.csv` (10 lung) | `--run-id batch-tanay-lung-001` |
-| xinhui | `search_terms/batches/xinhui.csv` (10 lung) | `--run-id batch-xinhui-lung-001` |
-| yiran | `search_terms/batches/yiran.csv` (10 colon) | `--run-id batch-yiran-colon-001` |
-| yule | `search_terms/batches/yule.csv` (10 colon) | `--run-id batch-yule-colon-001` |
-| suzie | `search_terms/batches/suzie.csv` (10 colon) | `--run-id batch-suzie-colon-001` |
+| haikuan | `search_terms/batches/haikuan.csv` (20 lung) | `--run-id batch-haikuan-lung-001` |
+| tanay | `search_terms/batches/tanay.csv` (20 lung) | `--run-id batch-tanay-lung-001` |
+| xinhui | `search_terms/batches/xinhui.csv` (20 lung) | `--run-id batch-xinhui-lung-001` |
+| yiran | `search_terms/batches/yiran.csv` (20 colon) | `--run-id batch-yiran-colon-001` |
+| yule | `search_terms/batches/yule.csv` (20 colon) | `--run-id batch-yule-colon-001` |
+| suzie | `search_terms/batches/suzie.csv` (20 colon) | `--run-id batch-suzie-colon-001` |
 
 Example below uses **tanay**. Swap those two values for your row.
 
@@ -47,11 +47,11 @@ python3 scripts/assign_collection_batches.py \
   --assignments search_terms/assignments/collection_assignments_current.csv
 ```
 
-Confirm `search_terms/batches/<your_name>.csv` exists and has 10 rows.
+Confirm `search_terms/batches/<your_name>.csv` exists and has 20 rows.
 
 ### 3. Collect videos (uses your API key)
 
-Each query uses about 100 quota units (10 queries ≈ 1,000).
+Each query uses about 100 quota units (20 queries ≈ 2,000).
 
 ```bash
 python3 collect_youtube_data.py \

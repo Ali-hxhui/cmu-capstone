@@ -1,0 +1,11 @@
+run_id,query_id,input_row,cancer_domain,search_query,normalized_search_query,contributor,source,scope_category
+batch-yiran-colon-002,query_011,12,colon,What is average risk vs high risk for colon cancer screening?,what is average risk vs high risk for colon cancer screening?,Yiran,USPSTF,Pre-screening education
+batch-yiran-colon-002,query_012,13,colon,My mom had colon cancer at 50 — when should I start getting screened?,my mom had colon cancer at 50 — when should i start getting screened?,Yiran,American Cancer Society,Pre-screening education
+batch-yiran-colon-002,query_013,14,colon,Do I need colon cancer screening if I have Crohn's disease or ulcerative colitis?,do i need colon cancer screening if i have crohn's disease or ulcerative colitis?,Yiran,American Cancer Society / USPSTF,Pre-screening education
+batch-yiran-colon-002,query_014,15,colon,What is a Cologuard test and how accurate is it?,what is a cologuard test and how accurate is it?,Yiran,American Cancer Society,Pre-screening education
+batch-yiran-colon-002,query_015,16,colon,FIT test vs stool DNA test — what's the difference?,fit test vs stool dna test — what's the difference?,Yiran,American Cancer Society,Pre-screening education
+batch-yiran-colon-002,query_016,17,colon,How accurate is the FIT test compared to colonoscopy?,how accurate is the fit test compared to colonoscopy?,Yiran,American Cancer Society,Pre-screening education
+batch-yiran-colon-002,query_017,18,colon,Can a colonoscopy miss cancer?,can a colonoscopy miss cancer?,Yiran,American Cancer Society,Anxiety Reduction
+batch-yiran-colon-002,query_018,19,colon,What are the risks of a colonoscopy?,what are the risks of a colonoscopy?,Yiran,American Cancer Society,Anxiety Reduction
+batch-yiran-colon-002,query_019,20,colon,What is overdiagnosis in colorectal cancer screening?,what is overdiagnosis in colorectal cancer screening?,Yiran,National Cancer Institute,Pre-screening education
+batch-yiran-colon-002,query_020,21,colon,can I drive myself home after a colonoscopy,can i drive myself home after a colonoscopy,Yiran,Mayo Clinic,Anxiety Reduction

@@ -1,0 +1,23 @@
+{
+  "run_id": "batch-yiran-colon-001",
+  "collected_at": "2026-09-24T22:03:52.025748+00:00",
+  "input_file": "search_terms/batches/yiran.csv",
+  "input_sha256": "11b7dcb836ad166cd1a4065f839265501ac162cf3a06bf2ede78d7b12646fd8f",
+  "configuration": {
+    "top_n": 10,
+    "start_at": 0,
+    "max_queries": null,
+    "region_code": "US",
+    "relevance_language": "en",
+    "max_retries": 2
+  },
+  "estimated_search_quota_units": 1000,
+  "outputs": [
+    "queries.csv",
+    "videos.csv",
+    "video_query_matches.csv",
+    "collection_errors.csv",
+    "dataset_qa.json",
+    "run_manifest.json"
+  ]
+}

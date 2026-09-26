@@ -1,0 +1,15 @@
+{
+  "run_id": "batch-yiran-colon-002",
+  "collected_at": "2026-09-26T22:12:18.316051+00:00",
+  "queries_requested": 10,
+  "queries_succeeded": 10,
+  "query_video_matches": 100,
+  "unique_videos": 92,
+  "exact_duplicate_matches_removed": 8,
+  "near_duplicate_candidates": 0,
+  "videos_with_metadata": 92,
+  "videos_reporting_captions": 26,
+  "videos_missing_title": 0,
+  "videos_missing_description": 4,
+  "errors_recorded": 0
+}

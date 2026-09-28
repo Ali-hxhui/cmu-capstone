@@ -1,0 +1,23 @@
+{
+  "run_id": "batch-yule-colon-001",
+  "collected_at": "2026-09-28T00:11:04.741918+00:00",
+  "input_file": "search_terms/batches/yule.csv",
+  "input_sha256": "dfbda532f39da0af94118834c2dcc359fc1be0f0a7fc91bfd8dcb88a203d3eac",
+  "configuration": {
+    "top_n": 10,
+    "start_at": 0,
+    "max_queries": null,
+    "region_code": "US",
+    "relevance_language": "en",
+    "max_retries": 2
+  },
+  "estimated_search_quota_units": 2000,
+  "outputs": [
+    "queries.csv",
+    "videos.csv",
+    "video_query_matches.csv",
+    "collection_errors.csv",
+    "dataset_qa.json",
+    "run_manifest.json"
+  ]
+}

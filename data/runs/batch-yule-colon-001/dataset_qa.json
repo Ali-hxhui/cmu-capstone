@@ -1,0 +1,15 @@
+{
+  "run_id": "batch-yule-colon-001",
+  "collected_at": "2026-09-28T00:11:04.741918+00:00",
+  "queries_requested": 20,
+  "queries_succeeded": 20,
+  "query_video_matches": 200,
+  "unique_videos": 173,
+  "exact_duplicate_matches_removed": 27,
+  "near_duplicate_candidates": 2,
+  "videos_with_metadata": 173,
+  "videos_reporting_captions": 35,
+  "videos_missing_title": 0,
+  "videos_missing_description": 12,
+  "errors_recorded": 0
+}

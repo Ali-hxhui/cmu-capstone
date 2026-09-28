@@ -1,0 +1,21 @@
+run_id,query_id,input_row,cancer_domain,search_query,normalized_search_query,contributor,source,scope_category
+batch-yule-colon-001,query_001,2,colon,Does a cancer screening test mean I have cancer,does a cancer screening test mean i have cancer,Yule,WHO,Anxiety Reduction
+batch-yule-colon-001,query_002,3,colon,Is there a colon cancer test I can do at home?,is there a colon cancer test i can do at home?,Yule,Cedars-Sinai,Pre-screening education
+batch-yule-colon-001,query_003,4,colon,Is colonoscopy painful?,is colonoscopy painful?,Yule,American Cancer Society,Anxiety Reduction
+batch-yule-colon-001,query_004,5,colon,How do I talk to my family about getting cancer screening,how do i talk to my family about getting cancer screening,Yule,American Cancer Society,Reinforcing screening importance
+batch-yule-colon-001,query_005,6,colon,I don't know if I can pay for the tests I need. How much does a cancer screening cost?,i don't know if i can pay for the tests i need. how much does a cancer screening cost?,Yule,American Cancer Society,Pre-screening education
+batch-yule-colon-001,query_006,7,colon,How to find a doctor for screening and other preventive care,how to find a doctor for screening and other preventive care,Yule,American Cancer Society,Pre-screening education
+batch-yule-colon-001,query_007,8,colon,I'm worried or nervous about screening tests.,i'm worried or nervous about screening tests.,Yule,American Cancer Society,Anxiety Reduction
+batch-yule-colon-001,query_008,9,colon,I'm too embarrassed to get a colon cancer test,i'm too embarrassed to get a colon cancer test,Yule,WHO,Anxiety Reduction
+batch-yule-colon-001,query_009,10,colon,What are my treatment options?,what are my treatment options?,Yule,American Cancer Society,Next steps after screening
+batch-yule-colon-001,query_010,11,colon,How might treatment affect my daily activities? Can I still work full time?,how might treatment affect my daily activities? can i still work full time?,Yule,American Cancer Society,Next steps after screening
+batch-yule-colon-001,query_011,12,colon,what medications should I stop before a colonoscopy,what medications should i stop before a colonoscopy,Yule,Mayo Clinic,Anxiety Reduction
+batch-yule-colon-001,query_012,13,colon,afraid of anesthesia for colonoscopy,afraid of anesthesia for colonoscopy,Yule,Forums,Anxiety Reduction
+batch-yule-colon-001,query_013,14,colon,colonoscopy claustrophobia,colonoscopy claustrophobia,Yule,Forums,Anxiety Reduction
+batch-yule-colon-001,query_014,15,colon,how to get over embarrassment of a colonoscopy,how to get over embarrassment of a colonoscopy,Yule,Forums,Anxiety Reduction
+batch-yule-colon-001,query_015,16,colon,does Medicare cover colon cancer screening,does medicare cover colon cancer screening,Yule,American Cancer Society,Pre-screening education
+batch-yule-colon-001,query_016,17,colon,does Medicaid cover a colonoscopy,does medicaid cover a colonoscopy,Yule,American Cancer Society,Pre-screening education
+batch-yule-colon-001,query_017,18,colon,free colon cancer screening near me,free colon cancer screening near me,Yule,CDC,Pre-screening education
+batch-yule-colon-001,query_018,19,colon,I don't have a primary care doctor — how do I get a colon cancer screening?,i don't have a primary care doctor — how do i get a colon cancer screening?,Yule,American Cancer Society,Pre-screening education
+batch-yule-colon-001,query_019,20,colon,no transportation to get to my colonoscopy appointment,no transportation to get to my colonoscopy appointment,Yule,Forums,Pre-screening education
+batch-yule-colon-001,query_020,21,colon,colon cancer screening for non-English speakers,colon cancer screening for non-english speakers,Yule,CDC,Pre-screening education

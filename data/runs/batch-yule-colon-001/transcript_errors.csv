@@ -1,0 +1,111 @@
+video_id,transcript_status,error
+x-TdAroUhjM,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=x-TdAroUhjM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+XDWDUZEYsZ4,transcript_unavailable,"NoTranscriptFound: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=XDWDUZEYsZ4! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ['en', 'en-US', 'en-GB']
+
+For this video (XDWDUZEYsZ4) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - hi (""Hindi (auto-generated)"")
+
+(TRANSLATION LANGUAGES)
+None
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+ZvuDf21yvMA,transcript_unavailable,"NoTranscriptFound: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ZvuDf21yvMA! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ['en', 'en-US', 'en-GB']
+
+For this video (ZvuDf21yvMA) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - hi (""Hindi (auto-generated)"")
+
+(TRANSLATION LANGUAGES)
+None
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+xiWqL8GlcVU,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=xiWqL8GlcVU! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+0mZYpABVIF4,transcript_unavailable,"NoTranscriptFound: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=0mZYpABVIF4! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ['en', 'en-US', 'en-GB']
+
+For this video (0mZYpABVIF4) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - hi (""Hindi (auto-generated)"")
+
+(TRANSLATION LANGUAGES)
+None
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+uwzW9iNp538,transcript_unavailable,"NoTranscriptFound: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=uwzW9iNp538! This is most likely caused by:
+
+No transcripts were found for any of the requested language codes: ['en', 'en-US', 'en-GB']
+
+For this video (uwzW9iNp538) transcripts are available in the following languages:
+
+(MANUALLY CREATED)
+None
+
+(GENERATED)
+ - hi (""Hindi (auto-generated)"")
+
+(TRANSLATION LANGUAGES)
+None
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+BbcrZEAQNU8,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=BbcrZEAQNU8! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+l_JGyvnhCIM,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=l_JGyvnhCIM! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+J2g7H0KopyI,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=J2g7H0KopyI! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+7CBfCW67xT8,transcript_unavailable,"VideoUnplayable: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=7CBfCW67xT8! This is most likely caused by:
+
+The video is unplayable for the following reason: The following content may contain suicide or self-harm topics.
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"
+znYE7k2zcDI,transcript_unavailable,"TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=znYE7k2zcDI! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!"

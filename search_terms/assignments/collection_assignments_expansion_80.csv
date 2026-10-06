@@ -1,0 +1,7 @@
+member_id,member_name,cancer_domain,start_at,max_queries,expected_run_id,status,notes
+haikuan,haikuan,lung,60,14,batch-haikuan-002,pending,New terms only: 14 lung + 13 colon (27).
+haikuan,haikuan,colon,60,13,batch-haikuan-002,pending,New terms only: 14 lung + 13 colon (27).
+yule,yule,lung,74,13,batch-yule-002,pending,New terms only: 13 lung + 14 colon (27).
+yule,yule,colon,73,14,batch-yule-002,pending,New terms only: 13 lung + 14 colon (27).
+suzie,suzie,lung,87,13,batch-suzie-002,pending,New terms only: 13 lung + 13 colon (26).
+suzie,suzie,colon,87,13,batch-suzie-002,pending,New terms only: 13 lung + 13 colon (26).

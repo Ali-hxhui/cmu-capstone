@@ -12,14 +12,14 @@ search_terms.csv → collect_youtube_data.py → data/runs/<member-run-id>/
 
 | Step | Who | Script | YouTube Data API? | Output |
 |------|-----|--------|-------------------|--------|
-| 1. Collect | each of the six | `collect_youtube_data.py` | Yes | `data/runs/<run-id>/` |
+| 1. Collect | this round: haikuan / yule / suzie | `collect_youtube_data.py` | Yes | `data/runs/<run-id>/` |
 | 2. Extract | same person | `extract_transcripts.py` | No | `videos_with_transcripts.csv` in that run folder |
 | 3. Push | same person | git | No | only `data/runs/<their-run-id>/` on `main` |
 | 4. Assemble | next teammate | `assemble_dataset.py` | No | `data/curated/<dataset-id>/` |
 | 5. Clean | same teammate | their cleaning code | No | cleaned tables committed for ranking |
 | 6. Rank | ranking entry point | separate from collection | No | scores per query |
 
-Each member collects and extracts on their own `data/runs/<run-id>/`, then pushes that folder. The next teammate merges and cleans. Ranking stays a separate entry point so a collection run never starts the model. Team commands: [README.md](README.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
+This round each of the three members collects only their new-term batch (`batch-*-002`). Wave 1 `*-001` folders are already on main. The next teammate merges and cleans. Ranking stays a separate entry point so a collection run never starts the model. Team commands: [README.md](README.md). Field contract: [DATA_CONTRACT.md](DATA_CONTRACT.md).
 
 ## 1. `collect_youtube_data.py`
 

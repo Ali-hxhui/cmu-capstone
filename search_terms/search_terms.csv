@@ -119,3 +119,83 @@ colon,what does a negative FIT test result mean,Suzie,CDC,Next steps after scree
 colon,does finding a polyp during colonoscopy mean I have cancer,Suzie,American Cancer Society,Anxiety Reduction
 colon,how soon do I need a follow-up colonoscopy after a polyp is removed,Suzie,American Cancer Society,Next steps after screening
 colon,what questions should I ask my doctor after an abnormal colon cancer screening result,Suzie,American Cancer Society,Next steps after screening
+lung,is a CT scan for lung cancer screening painful,Haikuan,American College of Radiology (RadiologyInfo.org),Anxiety reduction
+lung,do I need an IV or contrast dye for lung cancer screening,Haikuan,American College of Radiology (RadiologyInfo.org),Anxiety reduction
+lung,can I eat or drink before a lung cancer screening CT,Haikuan,American College of Radiology,Anxiety reduction
+lung,should I take my regular medications before a low-dose CT scan,Haikuan,American College of Radiology,Anxiety reduction
+lung,do I have to quit smoking before my lung cancer screening,Haikuan,USPSTF; American Lung Association,Reinforcing screening importance
+lung,what to bring to my lung cancer screening appointment,Haikuan,American Lung Association,Anxiety reduction
+lung,should I reschedule my lung cancer screening if I have a cold or chest infection,Haikuan,American College of Radiology,Anxiety reduction
+lung,what to expect at a lung cancer screening appointment from check-in to finish,Haikuan,American Lung Association; LUNGevity,Anxiety reduction
+lung,is a lung CT scan the same as an MRI,Haikuan,American College of Radiology (RadiologyInfo.org),Anxiety reduction
+lung,will I be alone in the room during my lung CT scan,Haikuan,American College of Radiology,Anxiety reduction
+lung,what if I cough or move during my lung cancer screening CT,Haikuan,American College of Radiology,Anxiety reduction
+lung,what does the CT technologist do during lung cancer screening,Haikuan,American College of Radiology (RadiologyInfo.org),Anxiety reduction
+lung,can I bring someone with me to my lung cancer screening,Haikuan,American Lung Association,Anxiety reduction
+lung,what can I do after a lung cancer screening CT scan: can I drive and go back to work,Haikuan,American College of Radiology,Anxiety reduction
+lung,who reads my lung cancer screening CT scan,Yule,American College of Radiology,Next steps after screening
+lung,my lung screening results showed up in MyChart before my doctor called: what does it mean,Yule,21st Century Cures Act information-blocking rule; American Lung Association,Next steps after screening
+lung,what does a Lung-RADS 4 result mean,Yule,American College of Radiology (Lung-RADS v2022),Next steps after screening
+lung,what does a Lung-RADS 2 benign result mean,Yule,American College of Radiology (Lung-RADS v2022),Next steps after screening
+lung,my lung cancer screening found emphysema or heart calcium: what does that mean,Yule,American College of Radiology,Next steps after screening
+lung,when is my next lung cancer screening due after a normal scan,Yule,USPSTF; American Lung Association,Reinforcing screening importance
+lung,why do I need a PET scan after lung cancer screening,Yule,American College of Radiology (Lung-RADS),Next steps after screening
+lung,lung cancer screening CT vs diagnostic chest CT: why does it change what I pay,Yule,HealthCare.gov: Preventive services; American Lung Association,Pre-screening education
+lung,will I have to pay for a follow-up CT scan if a lung nodule is found,Yule,American Lung Association: Lung cancer screening coverage,Next steps after screening
+lung,how much does a low-dose CT lung cancer screening cost without insurance,Yule,American Lung Association,Pre-screening education
+lung,is the shared decision-making visit for lung cancer screening covered by insurance,Yule,CMS National Coverage Determination 210.14,Pre-screening education
+lung,"what is a deductible, copay and coinsurance for lung cancer screening",Yule,HealthCare.gov glossary,Pre-screening education
+lung,does Medicare Advantage cover lung cancer screening,Yule,CMS; Medicare.gov,Pre-screening education
+lung,why did I get a bill for my lung cancer screening,Suzie,American Lung Association,Next steps after screening
+lung,what does Medicare require to cover lung cancer screening,Suzie,CMS National Coverage Determination 210.14 (2022),Pre-screening education
+lung,what does shared decision-making mean for lung cancer screening,Suzie,AHRQ: The SHARE Approach; CMS NCD 210.14,Pre-screening education
+lung,benefits and risks of lung cancer screening,Suzie,USPSTF; American Cancer Society,Pre-screening education
+lung,lung cancer risk factors besides smoking,Suzie,American Cancer Society: Lung cancer risk factors,Pre-screening education
+lung,is lung cancer screening right for me: lung cancer screening decision aid,Suzie,AHRQ; shouldiscreen.com (University of Michigan decision aid),Pre-screening education
+lung,how much does lung cancer screening lower my chance of dying from lung cancer,Suzie,"USPSTF evidence review (NLST, NELSON)",Pre-screening education
+lung,can I get help quitting smoking at my lung cancer screening visit,Suzie,CMS NCD 210.14; USPSTF,Reinforcing screening importance
+lung,what happens if I decide not to get lung cancer screening,Suzie,AHRQ: The SHARE Approach,Pre-screening education
+lung,"if lung cancer screening finds cancer early, can it be cured",Suzie,American Cancer Society; NCI,Reinforcing screening importance
+lung,does vaping or smoking marijuana count toward lung cancer screening eligibility,Suzie,USPSTF; American Lung Association,Pre-screening education
+lung,I have other serious health problems: should I still get lung cancer screening,Suzie,USPSTF,Pre-screening education
+lung,how to read my lung cancer screening CT report,Suzie,American College of Radiology,Next steps after screening
+colon,what can I eat the day before a colonoscopy,Haikuan,American Society for Gastrointestinal Endoscopy (ASGE),Anxiety reduction
+colon,what counts as a clear liquid diet before a colonoscopy,Haikuan,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,will I feel sick or uncomfortable during colonoscopy prep,Haikuan,ASGE; Mayo Clinic Press,Anxiety reduction
+colon,how do I know if my colonoscopy prep is working,Haikuan,ASGE,Anxiety reduction
+colon,what if I can't finish my colonoscopy prep or I throw it up,Haikuan,ASGE,Anxiety reduction
+colon,split-dose colonoscopy prep: when do I start drinking it,Haikuan,American Gastroenterological Association (AGA) / US Multi-Society Task Force on bowel prep,Anxiety reduction
+colon,do I need an IV for a colonoscopy,Haikuan,ASGE,Anxiety reduction
+colon,can I take my diabetes medicine or insulin before a colonoscopy,Haikuan,ASGE; American Diabetes Association,Pre-screening education
+colon,what to bring to my colonoscopy appointment,Haikuan,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,how to prevent a sore bottom during colonoscopy prep,Haikuan,Mayo Clinic Press: How to make colonoscopy prep easier,Anxiety reduction
+colon,low fiber diet before colonoscopy: what foods to avoid,Haikuan,ASGE,Anxiety reduction
+colon,can I have a colonoscopy if I am on my period,Haikuan,ASGE,Anxiety reduction
+colon,what happens during a colonoscopy step by step,Haikuan,NIDDK: Colonoscopy,Anxiety reduction
+colon,will I be awake during my colonoscopy,Yule,ASGE,Anxiety reduction
+colon,what does colonoscopy sedation feel like,Yule,ASGE,Anxiety reduction
+colon,who will be in the room during my colonoscopy and can I ask for a female doctor,Yule,American Cancer Society; NCCRT messaging guidebook,Anxiety reduction
+colon,what happens if they find a polyp during my colonoscopy,Yule,NCI: Colorectal Cancer Screening,Anxiety reduction
+colon,how long will I be at the hospital on colonoscopy day,Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,"gas, bloating and cramping after a colonoscopy: is that normal",Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,what can I eat after a colonoscopy,Yule,ASGE,Anxiety reduction
+colon,warning signs after a colonoscopy: when to call the doctor,Yule,ASGE; Mayo Clinic,Next steps after screening
+colon,when will I get my colonoscopy biopsy results,Yule,American Cancer Society,Next steps after screening
+colon,"how to read my colonoscopy pathology report: adenoma, hyperplastic, sessile serrated",Yule,American Cancer Society: Understanding your pathology report (colon polyps),Next steps after screening
+colon,when can I go back to work after a colonoscopy,Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,how do I collect a stool sample for a FIT test at home,Yule,CDC: Colorectal Cancer Screening Tests,Pre-screening education
+colon,how long does it take to get FIT or Cologuard results,Yule,American Cancer Society,Next steps after screening
+colon,screening colonoscopy vs diagnostic colonoscopy: why does it change what I pay,Yule,HealthCare.gov: Preventive services; American Cancer Society,Pre-screening education
+colon,why did I get a bill for my screening colonoscopy,Suzie,American Cancer Society; CMS,Next steps after screening
+colon,if a polyp is removed during my screening colonoscopy will I have to pay,Suzie,U.S. Dept. of Labor / HHS ACA implementation FAQs,Pre-screening education
+colon,is a follow-up colonoscopy after a positive stool test covered by insurance,Suzie,HRSA Women's/Preventive guidelines; CMS (2023 rule),Next steps after screening
+colon,"what is a deductible, copay and coinsurance for a colonoscopy",Suzie,HealthCare.gov glossary,Pre-screening education
+colon,does a high deductible health plan cover a colonoscopy,Suzie,HealthCare.gov: Preventive services,Pre-screening education
+colon,how much does a colonoscopy cost without insurance,Suzie,American Cancer Society,Pre-screening education
+colon,does insurance pay for anesthesia and the bowel prep kit for a colonoscopy,Suzie,ACA FAQs; American Cancer Society,Pre-screening education
+colon,what questions should I ask my insurance company before my colonoscopy,Suzie,American Cancer Society,Pre-screening education
+colon,Medicare colonoscopy: will I pay anything if they remove a polyp,Suzie,CMS: Medicare colorectal cancer screening coverage,Pre-screening education
+colon,what is shared decision making for colon cancer screening,Suzie,AHRQ: The SHARE Approach,Pre-screening education
+colon,benefits and risks of colonoscopy screening,Suzie,USPSTF; American Cancer Society,Pre-screening education
+colon,colorectal cancer risk factors: am I at higher risk,Suzie,American Cancer Society: Colorectal cancer risk factors,Pre-screening education
+colon,how do I choose the colon cancer screening test that fits my preferences,Suzie,USPSTF; NCCRT,Pre-screening education

@@ -1,0 +1,27 @@
+cancer_domain,search_query,contributor,source,scope_category
+lung,why did I get a bill for my lung cancer screening,Suzie,American Lung Association,Next steps after screening
+lung,what does Medicare require to cover lung cancer screening,Suzie,CMS National Coverage Determination 210.14 (2022),Pre-screening education
+lung,what does shared decision-making mean for lung cancer screening,Suzie,AHRQ: The SHARE Approach; CMS NCD 210.14,Pre-screening education
+lung,benefits and risks of lung cancer screening,Suzie,USPSTF; American Cancer Society,Pre-screening education
+lung,lung cancer risk factors besides smoking,Suzie,American Cancer Society: Lung cancer risk factors,Pre-screening education
+lung,is lung cancer screening right for me: lung cancer screening decision aid,Suzie,AHRQ; shouldiscreen.com (University of Michigan decision aid),Pre-screening education
+lung,how much does lung cancer screening lower my chance of dying from lung cancer,Suzie,"USPSTF evidence review (NLST, NELSON)",Pre-screening education
+lung,can I get help quitting smoking at my lung cancer screening visit,Suzie,CMS NCD 210.14; USPSTF,Reinforcing screening importance
+lung,what happens if I decide not to get lung cancer screening,Suzie,AHRQ: The SHARE Approach,Pre-screening education
+lung,"if lung cancer screening finds cancer early, can it be cured",Suzie,American Cancer Society; NCI,Reinforcing screening importance
+lung,does vaping or smoking marijuana count toward lung cancer screening eligibility,Suzie,USPSTF; American Lung Association,Pre-screening education
+lung,I have other serious health problems: should I still get lung cancer screening,Suzie,USPSTF,Pre-screening education
+lung,how to read my lung cancer screening CT report,Suzie,American College of Radiology,Next steps after screening
+colon,why did I get a bill for my screening colonoscopy,Suzie,American Cancer Society; CMS,Next steps after screening
+colon,if a polyp is removed during my screening colonoscopy will I have to pay,Suzie,U.S. Dept. of Labor / HHS ACA implementation FAQs,Pre-screening education
+colon,is a follow-up colonoscopy after a positive stool test covered by insurance,Suzie,HRSA Women's/Preventive guidelines; CMS (2023 rule),Next steps after screening
+colon,"what is a deductible, copay and coinsurance for a colonoscopy",Suzie,HealthCare.gov glossary,Pre-screening education
+colon,does a high deductible health plan cover a colonoscopy,Suzie,HealthCare.gov: Preventive services,Pre-screening education
+colon,how much does a colonoscopy cost without insurance,Suzie,American Cancer Society,Pre-screening education
+colon,does insurance pay for anesthesia and the bowel prep kit for a colonoscopy,Suzie,ACA FAQs; American Cancer Society,Pre-screening education
+colon,what questions should I ask my insurance company before my colonoscopy,Suzie,American Cancer Society,Pre-screening education
+colon,Medicare colonoscopy: will I pay anything if they remove a polyp,Suzie,CMS: Medicare colorectal cancer screening coverage,Pre-screening education
+colon,what is shared decision making for colon cancer screening,Suzie,AHRQ: The SHARE Approach,Pre-screening education
+colon,benefits and risks of colonoscopy screening,Suzie,USPSTF; American Cancer Society,Pre-screening education
+colon,colorectal cancer risk factors: am I at higher risk,Suzie,American Cancer Society: Colorectal cancer risk factors,Pre-screening education
+colon,how do I choose the colon cancer screening test that fits my preferences,Suzie,USPSTF; NCCRT,Pre-screening education

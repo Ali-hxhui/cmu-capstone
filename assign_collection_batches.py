@@ -58,6 +58,7 @@ def main() -> None:
         domain_counts[domain] = domain_counts.get(domain, 0) + 1
 
     print(f"Master file: {len(terms)} search terms ({domain_counts})")
+    member_batches: dict[str, list[dict[str, str]]] = {}
     for row in assignments:
         member_id = row["member_id"]
         domain = row["cancer_domain"].strip().lower()
@@ -70,17 +71,21 @@ def main() -> None:
         if not batch:
             print(f"  {member_id} ({domain}): skipped (0 terms in slice)")
             continue
-        output_path = output_dir / f"{member_id}.csv"
-        write_csv(output_path, columns, batch)
+        member_batches.setdefault(member_id, []).extend(batch)
         print(
             f"  {member_id} ({domain}): slice {start_at + 1}-{start_at + len(batch)} "
-            f"of {len(domain_terms)} ({len(batch)} terms) -> {output_path}"
+            f"of {len(domain_terms)} ({len(batch)} terms)"
         )
         if max_queries and len(batch) < max_queries:
             print(
                 f"    warning: expected {max_queries} {domain} terms but only "
                 f"{len(domain_terms)} exist in master file"
             )
+
+    for member_id, batch in member_batches.items():
+        output_path = output_dir / f"{member_id}.csv"
+        write_csv(output_path, columns, batch)
+        print(f"  wrote {member_id}: {len(batch)} terms -> {output_path}")
 
 
 if __name__ == "__main__":

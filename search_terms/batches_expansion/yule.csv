@@ -1,0 +1,28 @@
+cancer_domain,search_query,contributor,source,scope_category
+lung,who reads my lung cancer screening CT scan,Yule,American College of Radiology,Next steps after screening
+lung,my lung screening results showed up in MyChart before my doctor called: what does it mean,Yule,21st Century Cures Act information-blocking rule; American Lung Association,Next steps after screening
+lung,what does a Lung-RADS 4 result mean,Yule,American College of Radiology (Lung-RADS v2022),Next steps after screening
+lung,what does a Lung-RADS 2 benign result mean,Yule,American College of Radiology (Lung-RADS v2022),Next steps after screening
+lung,my lung cancer screening found emphysema or heart calcium: what does that mean,Yule,American College of Radiology,Next steps after screening
+lung,when is my next lung cancer screening due after a normal scan,Yule,USPSTF; American Lung Association,Reinforcing screening importance
+lung,why do I need a PET scan after lung cancer screening,Yule,American College of Radiology (Lung-RADS),Next steps after screening
+lung,lung cancer screening CT vs diagnostic chest CT: why does it change what I pay,Yule,HealthCare.gov: Preventive services; American Lung Association,Pre-screening education
+lung,will I have to pay for a follow-up CT scan if a lung nodule is found,Yule,American Lung Association: Lung cancer screening coverage,Next steps after screening
+lung,how much does a low-dose CT lung cancer screening cost without insurance,Yule,American Lung Association,Pre-screening education
+lung,is the shared decision-making visit for lung cancer screening covered by insurance,Yule,CMS National Coverage Determination 210.14,Pre-screening education
+lung,"what is a deductible, copay and coinsurance for lung cancer screening",Yule,HealthCare.gov glossary,Pre-screening education
+lung,does Medicare Advantage cover lung cancer screening,Yule,CMS; Medicare.gov,Pre-screening education
+colon,will I be awake during my colonoscopy,Yule,ASGE,Anxiety reduction
+colon,what does colonoscopy sedation feel like,Yule,ASGE,Anxiety reduction
+colon,who will be in the room during my colonoscopy and can I ask for a female doctor,Yule,American Cancer Society; NCCRT messaging guidebook,Anxiety reduction
+colon,what happens if they find a polyp during my colonoscopy,Yule,NCI: Colorectal Cancer Screening,Anxiety reduction
+colon,how long will I be at the hospital on colonoscopy day,Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,"gas, bloating and cramping after a colonoscopy: is that normal",Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,what can I eat after a colonoscopy,Yule,ASGE,Anxiety reduction
+colon,warning signs after a colonoscopy: when to call the doctor,Yule,ASGE; Mayo Clinic,Next steps after screening
+colon,when will I get my colonoscopy biopsy results,Yule,American Cancer Society,Next steps after screening
+colon,"how to read my colonoscopy pathology report: adenoma, hyperplastic, sessile serrated",Yule,American Cancer Society: Understanding your pathology report (colon polyps),Next steps after screening
+colon,when can I go back to work after a colonoscopy,Yule,Mayo Clinic: Colonoscopy,Anxiety reduction
+colon,how do I collect a stool sample for a FIT test at home,Yule,CDC: Colorectal Cancer Screening Tests,Pre-screening education
+colon,how long does it take to get FIT or Cologuard results,Yule,American Cancer Society,Next steps after screening
+colon,screening colonoscopy vs diagnostic colonoscopy: why does it change what I pay,Yule,HealthCare.gov: Preventive services; American Cancer Society,Pre-screening education

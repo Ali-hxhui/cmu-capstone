@@ -1,6 +1,6 @@
 # Search terms
 
-Working list: **`search_terms.csv`**. Clone-and-run steps: [README.md](../README.md).
+Working list: **`search_terms.csv`**. How to collect this round (English): [README.md](../README.md).
 
 When this file is replaced on GitHub, pull and regenerate batches before collecting. Finished videos and transcripts are pushed as `data/runs/<run-id>/`, not as edits to this folder.
 

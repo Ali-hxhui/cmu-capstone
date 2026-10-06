@@ -9,38 +9,52 @@ Your new terms → collect videos → extract transcripts → push your run fold
                → merge and clean → ranking model
 ```
 
-Wave 1 (120 terms, six people) is already collected. This round is **the 80 new terms only**, split across three people. Use your **002** run-id. Do not write into a `*-001` folder.
-
 **Other docs:** [YOUTUBE_API_KEY.md](YOUTUBE_API_KEY.md) · [PIPELINE_GUIDE.md](PIPELINE_GUIDE.md) · [DATA_CONTRACT.md](DATA_CONTRACT.md)
 
-## What each person does this round
+## How to run this round
 
-Copy the **`--input`** and **`--run-id`** from your row. Do not invent a different run-id.
+Wave 1 (the original 120 terms, six `*-001` folders) is **already done**. Do not collect those terms again and do not write into a `*-001` folder.
 
-| You | Your terms | Collect / extract with |
-|-----|------------|------------------------|
-| haikuan | `search_terms/batches_expansion/haikuan.csv` (27: 14 lung + 13 colon) | `--run-id batch-haikuan-002` |
-| yule | `search_terms/batches_expansion/yule.csv` (27: 13 lung + 14 colon) | `--run-id batch-yule-002` |
-| suzie | `search_terms/batches_expansion/suzie.csv` (26: 13 lung + 13 colon) | `--run-id batch-suzie-002` |
+This round is **the 80 new terms only**.
 
-After `git pull`, those three CSVs are already in the repo. You do not need to regenerate them unless `search_terms.csv` changes again.
+| Who | Collects this round? | Term file | Run-id | Count |
+|-----|----------------------|-----------|--------|-------|
+| haikuan | Yes | `search_terms/batches_expansion/haikuan.csv` | `batch-haikuan-002` | 27 (14 lung + 13 colon) |
+| yule | Yes | `search_terms/batches_expansion/yule.csv` | `batch-yule-002` | 27 (13 lung + 14 colon) |
+| suzie | Yes | `search_terms/batches_expansion/suzie.csv` | `batch-suzie-002` | 26 (13 lung + 13 colon) |
+| tanay | No | — | — | Wave 1 finished |
+| xinhui | No | — | — | Wave 1 finished |
+| yiran | No | — | — | Wave 1 finished |
 
-Example below uses **haikuan**. Yule and Suzie only swap the two values in the table.
+Copy the `--input` and `--run-id` from your row. Do not invent a different run-id.
 
-### 1. Pull, install, add your API key
+The three CSVs are already in the repo after `git pull`. You do not need to regenerate them unless `search_terms.csv` changes again.
+
+Each query uses about 100 quota units (27 queries ≈ 2,700).
+
+Team repo: [Suzi1i1i/ahn_cancer_screening](https://github.com/Suzi1i1i/ahn_cancer_screening). Run every command below from `data_collection/`.
+
+First-time clone:
+
+```bash
+git clone https://github.com/Suzi1i1i/ahn_cancer_screening.git
+cd ahn_cancer_screening/data_collection
+```
+
+### 1. Pull and check your API key
 
 ```bash
 git pull origin main
-cd cmu-capstone   # if you are not already in the repo root
+cd data_collection   # if you already cloned and are not already here
 python3 -m pip install -r requirements.txt
 cp .env.example .env   # skip if you already have .env
 # Put your key in .env — steps in YOUTUBE_API_KEY.md
 python3 test_youtube_api.py
 ```
 
-Confirm `search_terms/batches_expansion/<your_name>.csv` exists. Row counts: haikuan 27, yule 27, suzie 26.
+Confirm `search_terms/batches_expansion/<your_name>.csv` exists (27 rows for haikuan and yule, 26 for suzie).
 
-If that file is missing, regenerate it:
+If that file is missing:
 
 ```bash
 python3 assign_collection_batches.py \
@@ -50,7 +64,9 @@ python3 assign_collection_batches.py \
 
 ### 2. Collect videos (uses your API key)
 
-Each query uses about 100 quota units (27 queries ≈ 2,700).
+Use **only your own** command.
+
+**haikuan**
 
 ```bash
 python3 collect_youtube_data.py \
@@ -59,17 +75,33 @@ python3 collect_youtube_data.py \
   --run-id batch-haikuan-002
 ```
 
-| You | Command |
-|-----|---------|
-| haikuan | `python3 collect_youtube_data.py --input search_terms/batches_expansion/haikuan.csv --top-n 10 --run-id batch-haikuan-002` |
-| yule | `python3 collect_youtube_data.py --input search_terms/batches_expansion/yule.csv --top-n 10 --run-id batch-yule-002` |
-| suzie | `python3 collect_youtube_data.py --input search_terms/batches_expansion/suzie.csv --top-n 10 --run-id batch-suzie-002` |
+**yule**
 
-Creates `data/runs/batch-haikuan-002/videos.csv` (or your run-id). If that folder already exists, the script will not overwrite.
+```bash
+python3 collect_youtube_data.py \
+  --input search_terms/batches_expansion/yule.csv \
+  --top-n 10 \
+  --run-id batch-yule-002
+```
+
+**suzie**
+
+```bash
+python3 collect_youtube_data.py \
+  --input search_terms/batches_expansion/suzie.csv \
+  --top-n 10 \
+  --run-id batch-suzie-002
+```
+
+This writes `data/runs/<your-run-id>/videos.csv`. If that folder already exists, the script will not overwrite.
 
 Optional check with no API calls: add `--dry-run`.
 
 ### 3. Extract public transcripts (no API key)
+
+Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later. A few `transcript_unavailable` videos are normal.
+
+**haikuan**
 
 ```bash
 python3 extract_transcripts.py \
@@ -77,17 +109,27 @@ python3 extract_transcripts.py \
   --resume --batch-size 50 --delay-seconds 5
 ```
 
-| You | `--input` |
-|-----|-----------|
-| haikuan | `data/runs/batch-haikuan-002/videos.csv` |
-| yule | `data/runs/batch-yule-002/videos.csv` |
-| suzie | `data/runs/batch-suzie-002/videos.csv` |
+**yule**
 
-Leave `--translate-to-en` off. If YouTube blocks the IP, stop and resume later. A few `transcript_unavailable` videos are normal.
+```bash
+python3 extract_transcripts.py \
+  --input data/runs/batch-yule-002/videos.csv \
+  --resume --batch-size 50 --delay-seconds 5
+```
+
+**suzie**
+
+```bash
+python3 extract_transcripts.py \
+  --input data/runs/batch-suzie-002/videos.csv \
+  --resume --batch-size 50 --delay-seconds 5
+```
 
 ### 4. Push only your finished run
 
-Commit `data/runs/<your-run-id>/` only after it contains both `videos.csv` and `videos_with_transcripts.csv`. Do not commit `.env`, and do not commit another person's run folder.
+Commit `data/runs/<your-run-id>/` only after it contains both `videos.csv` and `videos_with_transcripts.csv`. Do not commit `.env`. Do not commit another person's run folder.
+
+**haikuan**
 
 ```bash
 git pull origin main
@@ -96,11 +138,23 @@ git commit -m "Add batch-haikuan-002 videos and transcripts."
 git push origin main
 ```
 
-| You | Add this folder |
-|-----|-----------------|
-| haikuan | `data/runs/batch-haikuan-002` |
-| yule | `data/runs/batch-yule-002` |
-| suzie | `data/runs/batch-suzie-002` |
+**yule**
+
+```bash
+git pull origin main
+git add data/runs/batch-yule-002
+git commit -m "Add batch-yule-002 videos and transcripts."
+git push origin main
+```
+
+**suzie**
+
+```bash
+git pull origin main
+git add data/runs/batch-suzie-002
+git commit -m "Add batch-suzie-002 videos and transcripts."
+git push origin main
+```
 
 Each run-id is a different folder, so the three pushes do not overwrite each other.
 
